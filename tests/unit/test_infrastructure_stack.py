@@ -15,5 +15,5 @@
 #     assert("AWS::SQS::Queue" in get_template())
 
 
-# def test_sns_topic_created():
-#     assert("AWS::SNS::Topic" in get_template())
+def test_placeholder():
+    assert 1 == 1
