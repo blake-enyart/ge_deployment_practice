@@ -6,6 +6,6 @@ from infrastructure.infrastructure_stack import InfrastructureStack
 
 
 app = core.App()
-InfrastructureStack(app, "infrastructure", env={'region': 'us-west-2'})
+InfrastructureStack(app, "infrastructure", env={"region": "us-east-1"})
 
 app.synth()

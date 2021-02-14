@@ -100,7 +100,7 @@ stores:
     class_name: ValidationsStore
     store_backend:
       class_name: TupleS3StoreBackend
-      bucket: blake-enyart-great-expectations
+      bucket: infrastructure-s3bucket6575f0a6-17pyingeimwyo
       prefix: validations
 
 
@@ -131,7 +131,7 @@ data_docs_sites:
     class_name: SiteBuilder
     store_backend:
       class_name: TupleS3StoreBackend
-      bucket: blake-enyart-great-expectations
+      bucket: infrastructure-s3bucket6575f0a6-17pyingeimwyo
     site_index_builder:
       class_name: DefaultSiteIndexBuilder
       show_cta_footer: true
