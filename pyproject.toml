@@ -1,11 +1,12 @@
 [tool.poetry]
-name = "ge_example"
+name = "ge_practice_deployment"
 version = "0.1.0"
-description = "Practice productionalizing GE deployment"
+description = "Practice deployment of GE"
 authors = ["Blake Enyart <blake.enyart@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+"aws-solutions-constructs.aws-cloudfront-s3" = "^1.87.0"
 
 [tool.poetry.dev-dependencies]
 

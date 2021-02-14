@@ -41,6 +41,7 @@ def install_hooks(c):
         c.run("commitizen", hide=True)
     except:
         c.run("npm install -g commitizen")
+        c.run("commitizen init cz-conventional-changelog --save-dev --save-exact")
 
 
 @task
@@ -63,9 +64,7 @@ def check_formatting(c):
 
 
 @task(optional=["stack"])
-def deploy(
-    c, profile=AWS_PROFILE, region=AWS_REGION, force=False, app=APP, stack=None
-):
+def deploy(c, profile=AWS_PROFILE, region=AWS_REGION, force=False, app=APP, stack=None):
     """Deploy CDK CloudFormation stack(s)."""
 
     if stack:
@@ -86,9 +85,7 @@ def destroy(
 ):
     """Tear-down CDK CloudFormation stack(s)."""
 
-    responder = Responder(
-        pattern="Are you sure you want to delete.*", response="y\n"
-    )
+    responder = Responder(pattern="Are you sure you want to delete.*", response="y\n")
 
     if stack:
         c.run(
@@ -144,9 +141,7 @@ def test(c):
 
 
 @task
-def s3_bucket_sync(
-    c, profile=AWS_PROFILE, source_bucket=None, sink_bucket=None
-):
+def s3_bucket_sync(c, profile=AWS_PROFILE, source_bucket=None, sink_bucket=None):
     """Sync an S3 bucket with another S3 bucket"""
     if not source_bucket or sink_bucket:
         source_bucket = "s3://deutsche-boerse-eurex-pds/2017-05-27/"
